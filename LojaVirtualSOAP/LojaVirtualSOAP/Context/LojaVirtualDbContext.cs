@@ -9,10 +9,12 @@ namespace LojaVirtualSOAP.Context
 {
     public class LojaVirtualDbContext : DbContext
     {
-        protected LojaVirtualDbContext(): base("LojaVirtualDbContext")
-        {}
+        public LojaVirtualDbContext(): base("LojaVirtualDbContext")
+        {
 
-        public DbSet<Endereco> Enderecos { get; set; }
+        }
+
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
     }
 }

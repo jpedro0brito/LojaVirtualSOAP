@@ -12,10 +12,10 @@ namespace LojaVirtualSOAP.Repository
     {
         protected readonly LojaVirtualDbContext Context;
         protected readonly DbSet<Entity> DbSet;
-        public BaseRepository(LojaVirtualDbContext context)
+        public BaseRepository()
         {
-            Context = context;
-            DbSet = context.Set<Entity>();
+            Context = new LojaVirtualDbContext();
+            DbSet = Context.Set<Entity>();
         }
 
         public void Dispose()

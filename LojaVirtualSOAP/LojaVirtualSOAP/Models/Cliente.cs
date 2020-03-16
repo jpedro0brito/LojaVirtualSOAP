@@ -17,12 +17,7 @@ namespace LojaVirtualSOAP.Models
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-        public IList<Endereco> Enderecos { get; set; }
-
-        internal XmlCliente ToXmlEndereco()
-        {
-            throw new NotImplementedException();
-        }
+        public ICollection<Endereco> Enderecos { get; set; }
     }
 
     [XmlRoot("WSClientes"), XmlType("Cliente")]
@@ -36,6 +31,7 @@ namespace LojaVirtualSOAP.Models
         public string Email { get; set; }
         [XmlElement("Telefone")]
         public string Telefone { get; set; }
+        [XmlElement("Enderecos")]
         public List<XmlEndereco> XmlEnderecos { get; set; }
     }
 }

@@ -18,10 +18,11 @@ namespace LojaVirtualSOAP
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            container.RegisterSingleton<LojaVirtualDbContext, LojaVirtualDbContext>();
-            container.RegisterType<IEnderecoRepository, EnderecoRepository>();
+            container.RegisterType(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             container.RegisterType<IClienteRepository, ClienteRepository>();
-            
+            container.RegisterType<IEnderecoRepository, EnderecoRepository>();
+            container.RegisterType<LojaVirtualDbContext, LojaVirtualDbContext>();
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }
