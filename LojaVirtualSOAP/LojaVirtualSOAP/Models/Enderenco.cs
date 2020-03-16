@@ -25,17 +25,17 @@ namespace LojaVirtualSOAP.Models
     [XmlRoot("WSEnderecos"), XmlType("Endereco")]
     public class XmlEndereco
     {
-        [XmlElement("CPF")]
+        [XmlElement("Rua")]
         public string Rua { get; set; }
-        [XmlElement("CPF")]
+        [XmlElement("Bairro")]
         public string Bairro { get; set; }
-        [XmlElement("CPF")]
+        [XmlElement("Cidade")]
         public string Cidade { get; set; }
-        [XmlElement("CPF")]
+        [XmlElement("UF")]
         public string UF { get; set; }
-        [XmlElement("CPF")]
+        [XmlElement("Complemento")]
         public string Complemento { get; set; }
-        [XmlElement("CPF")]
+        [XmlElement("Numero")]
         public string Numero { get; set; }
         [XmlElement("Cliente")]
         public XmlCliente XmlCliente { get; set; }

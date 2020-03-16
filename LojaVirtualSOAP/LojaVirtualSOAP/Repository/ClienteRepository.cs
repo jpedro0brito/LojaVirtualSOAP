@@ -10,9 +10,6 @@ namespace LojaVirtualSOAP.Repository
 {
     public class ClienteRepository : BaseRepository<Cliente>, IClienteRepository
     {
-        public ClienteRepository(LojaVirtualDbContext context) : 
-            base(context) {}
-
         public Cliente BuscaClientePorID(int id)
         {
             return DbSet.Find(id);

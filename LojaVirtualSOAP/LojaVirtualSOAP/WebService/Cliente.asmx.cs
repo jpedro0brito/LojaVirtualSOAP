@@ -1,5 +1,6 @@
 ﻿using LojaVirtualSOAP.Helps;
 using LojaVirtualSOAP.Models;
+using LojaVirtualSOAP.Repository;
 using LojaVirtualSOAP.Repository.Intefaces;
 using System;
 using System.Collections.Generic;
@@ -20,15 +21,18 @@ namespace LojaVirtualSOAP.WebService
     public class Cliente : System.Web.Services.WebService
     {
         private readonly IClienteRepository _repository;
-        public Cliente(IClienteRepository repository)
+        public Cliente()
         {
-            _repository = repository;
+            _repository = new ClienteRepository();
         }
 
         [WebMethod]
-        public IList<XmlCliente> BuscaTodosOsClientes()
+        public List<XmlCliente> BuscaTodosOsClientes()
         {
-            return _repository.BuscaTodosOsClientes().Select(c => c.ToXmlCliente()).ToList();
+            return _repository
+                .BuscaTodosOsClientes()
+                .Select(c => c.ToXmlCliente())
+                .ToList();
         }
     }
 }
