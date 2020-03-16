@@ -17,8 +17,8 @@ namespace LojaVirtualSOAP.Models
         public string UF { get; set; }
         public string Complemento { get; set; }
         public string Numero { get; set; }
-        [ForeignKey("ClienteID")]
         public int ClienteID { get; set; }
+        [ForeignKey("ClienteID")]
         public Cliente Cliente { get; set; }
     }
 

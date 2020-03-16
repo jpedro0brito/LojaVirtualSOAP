@@ -17,7 +17,7 @@ namespace LojaVirtualSOAP.Models
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
-        public IList<Endereco> Enderecos { get; set; }
+        public ICollection<Endereco> Enderecos { get; set; }
     }
 
     [XmlRoot("WSClientes"), XmlType("Cliente")]

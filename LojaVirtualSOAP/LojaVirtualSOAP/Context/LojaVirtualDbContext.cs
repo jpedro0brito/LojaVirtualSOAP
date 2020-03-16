@@ -14,7 +14,7 @@ namespace LojaVirtualSOAP.Context
 
         }
 
-        public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
     }
 }

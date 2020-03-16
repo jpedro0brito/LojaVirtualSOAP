@@ -16,7 +16,9 @@ namespace LojaVirtualSOAP.Helps
                 Nome = xmlCliente.Nome,
                 Email = xmlCliente.Email,
                 Telefone = xmlCliente.Telefone,
-                Enderecos = xmlCliente.XmlEnderecos.Select(e => e.ToEndereco()).ToList()
+                Enderecos = xmlCliente.XmlEnderecos != null
+                    ? xmlCliente.XmlEnderecos.Select(e => e.ToEndereco()).ToList()
+                    : null
             };
         }
 
@@ -28,7 +30,9 @@ namespace LojaVirtualSOAP.Helps
                 Nome = cliente.Nome,
                 Email = cliente.Email,
                 Telefone = cliente.Telefone,
-                XmlEnderecos = cliente.Enderecos.Select(e => e.ToXmlEndereco()).ToList()
+                XmlEnderecos = cliente.Enderecos != null
+                    ? cliente.Enderecos.Select(e => e.ToXmlEndereco()).ToList() 
+                    : null
             };
         }
     }

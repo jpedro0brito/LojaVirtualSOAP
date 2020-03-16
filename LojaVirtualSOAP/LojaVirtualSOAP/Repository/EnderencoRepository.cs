@@ -10,9 +10,6 @@ namespace LojaVirtualSOAP.Repository
 {
     public class EnderecoRepository : BaseRepository<Endereco>, IEnderecoRepository
     {
-        public EnderecoRepository(LojaVirtualDbContext context) : 
-            base(context) {}
-
         public IEnumerable<Endereco> BuscaEnderecoPorCidade(string cidade)
         {
             return DbSet.Where(e => e.Cidade.Equals(cidade));

@@ -12,13 +12,15 @@ namespace LojaVirtualSOAP.Helps
         {
             return new Endereco
             {
-                Rua = xmlEndereco.Rua,
-                Bairro = xmlEndereco.Bairro,
-                Cidade = xmlEndereco.Cidade,
                 UF = xmlEndereco.UF,
-                Complemento = xmlEndereco.Complemento,
+                Rua = xmlEndereco.Rua,
                 Numero = xmlEndereco.Numero,
-                Cliente = xmlEndereco.XmlCliente.ToCliente()
+                Cidade = xmlEndereco.Cidade,
+                Bairro = xmlEndereco.Bairro,
+                Complemento = xmlEndereco.Complemento,
+                Cliente = xmlEndereco.XmlCliente != null 
+                    ? xmlEndereco.XmlCliente.ToCliente()
+                    : null
             };
         }
 
@@ -26,13 +28,15 @@ namespace LojaVirtualSOAP.Helps
         {
             return new XmlEndereco
             {
-                Rua = endereco.Rua,
-                Bairro = endereco.Bairro,
-                Cidade = endereco.Cidade,
                 UF = endereco.UF,
-                Complemento = endereco.Complemento,
+                Rua = endereco.Rua,
                 Numero = endereco.Numero,
-                XmlCliente = endereco.Cliente.ToXmlCliente()
+                Cidade = endereco.Cidade,
+                Bairro = endereco.Bairro,
+                Complemento = endereco.Complemento,
+                XmlCliente = endereco.Cliente != null 
+                    ? endereco.Cliente.ToXmlCliente()
+                    : null
             };
         }
     }
